@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import {WobbleCard} from "../components/ui/wobble-card"; // Importez votre composant ici
-// Importez votre composant ici
+import {WobbleCard} from "../components/ui/wobble-card";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,55 +45,69 @@ export default function Home() {
         <section className="h-screen w-full flex items-center justify-center bg-cover bg-center bg-[url('/img/welcome-bg.webp')]">
           <h1 className="text-6xl font-bold text-white max-w-[70%] text-center">Welcome to the portfolio of FIGUEIRAS Jossua</h1>
         </section>
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full h-screen">
-          <WobbleCard
-          containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[300px] lg:min-h-[300px]"
-          className="">
-          <div className="max-w-xs">
-            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-              Gippity AI powers the entire universe
+        <section className=" w-full p-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-5xl w-full mx-auto">
+            <WobbleCard
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-red-900 min-h-[180px] lg:min-h-[150px]"
+            className=""
+          >
+            <div className="max-w-xs">
+              <h2 className="text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
+                Gippity AI powers the entire universe
+              </h2>
+              <p className="mt-2 text-left text-sm/5 text-neutral-200">
+                With over 100,000 monthly active bot users, Gippity AI is the most
+                popular AI platform for developers.
+              </p>
+            </div>
+            <Image
+              src="/linear.webp"
+              width={300}
+              height={300}
+              alt="linear demo image"
+              className="absolute -right-4 lg:-right-[20%] grayscale filter -bottom-6 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 min-h-[150px] bg-purple-900">
+            <h2 className="max-w-60 text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
+              Computer Skills
             </h2>
-            <p className="mt-4 text-left  text-base/6 text-neutral-200">
-              With over 100,000 mothly active bot users, Gippity AI is the most
-              popular AI platform for developers.
-            </p>
-          </div>
-          <Image
-            src="/linear.webp"
-            width={500}
-            height={500}
-            alt="linear demo image"
-            className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"/>
-        </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-          <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            No shirt, no shoes, no weapons.
-          </h2>
-          <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-            If someone yells “stop!”, goes limp, or taps out, the fight is over.
-          </p>
-        </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] w-[80%]">
-          <div className="max-w-sm">
-            <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-              Signup for blazing-fast cutting-edge state of the art Gippity AI
-              wrapper today!
+            <ul className="list-disc list-inside mt-2 max-w-[20rem] text-left text-sm/5 text-neutral-200">
+              <li>Hardware</li>
+              <li>Coreml tools</li>
+              <li>Programming</li>
+            </ul>
+            <h2 className="pt-4 max-w-60 text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
+              Programming languages
             </h2>
-            <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-              With over 100,000 mothly active bot users, Gippity AI is the most
-              popular AI platform for developers.
-            </p>
-          </div>
-          <Image
-            src="/linear.webp"
-            width={500}
-            height={500}
-            alt="linear demo image"
-            className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-          />
-        </WobbleCard>
-
-
+            <ul className="list-disc list-inside mt-2 max-w-[20rem] text-left text-sm/5 text-neutral-200">
+              <li>Python</li>
+              <li>PHP</li>
+              <li>C#</li>
+              <li>C</li>
+            </ul>
+          </WobbleCard>
+          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-orange-900 min-h-[180px] lg:min-h-[150px]">
+            <div className="max-w-sm">
+              <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
+                Signup for blazing-fast cutting-edge state of the art Gippity AI
+                wrapper today!
+              </h2>
+              <p className="mt-2 max-w-[20rem] text-left text-sm/5 text-neutral-200">
+                With over 100,000 monthly active bot users, Gippity AI is the most
+                popular AI platform for developers.
+              </p>
+            </div>
+            <Image
+              src="/linear.webp"
+              width={300}
+              height={300}
+              alt="linear demo image"
+              className="absolute -right-6 md:-right-[20%] lg:-right-[10%] -bottom-6 object-contain rounded-2xl"
+            />
+          </WobbleCard>
+        </div>
+        <p className="text-center text-white">Discovers my project</p>
         </section>
       </main>
     </div>
