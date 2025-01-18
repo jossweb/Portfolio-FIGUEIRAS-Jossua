@@ -32,7 +32,7 @@ export default function Home() {
               EN
             </button>
             {isOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg">
+              <div className="absolute right-0 mt-2 w-20 bg-white rounded-md shadow-lg">
                 <Link href="/fr" className="block px-4 py-2 text-black hover:bg-gray-200">
                   FR
                 </Link>
@@ -53,20 +53,28 @@ export default function Home() {
           >
             <div className="max-w-xs">
               <h2 className="text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
-                Gippity AI powers the entire universe
+                Github
               </h2>
               <p className="mt-2 text-left text-sm/5 text-neutral-200">
-                With over 100,000 monthly active bot users, Gippity AI is the most
-                popular AI platform for developers.
+                Discover my github profile, with the code of each of my public projects
               </p>
+              <a href="https://github.com/jossweb" target="_blank" className="flex justify-center items-center relative z-10 inline-flex items-center px-4 py-2 bg-white text-black rounded-md mt-4">
+                <Image
+                  src="/img/github-logo.svg"
+                  alt="GitHub Logo"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />
+                Github
+              </a>
             </div>
             <Image
-              src="/linear.webp"
-              width={300}
-              height={300}
-              alt="linear demo image"
-              className="absolute -right-4 lg:-right-[20%] grayscale filter -bottom-6 object-contain rounded-2xl"
-            />
+              src="/img/github.webp"
+              width={425}
+              height={425}
+              alt="Repo github illustration"
+              className="absolute -right-4 lg:-right-[20%] grayscale filter -bottom-6 object-contain rounded-2xl"/>
           </WobbleCard>
           <WobbleCard containerClassName="col-span-1 min-h-[150px] bg-purple-900">
             <h2 className="max-w-60 text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
