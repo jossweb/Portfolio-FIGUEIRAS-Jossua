@@ -8,8 +8,11 @@ import { Progress } from "@/components/ui/progress"
 import { Button } from "../components/ui/button"
 import { Github } from 'lucide-react'
 import { Navbar} from "../components/ui/navbar"
+import Popup from '../components/ui/popup';
+import AppleCardsCarouselDemo from "../components/apple-card"
 
 export default function Home() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <div>
@@ -105,12 +108,19 @@ export default function Home() {
         <Progress value={10} className="w-[60%] mt-8 mb-2" />
         <p className="mt-2 text-sm text-neutral-400 mb-5">Progress: 10%</p>
         <p className="mt-2 text-sm text-neutral-400">Current step: adding llama to the mac application with coreml</p>
-        <Button variant="outline" className="mt-8" onClick={() => window.open('https://github.com/jossweb', '_blank')}>
+        <Button variant="outline" className="mt-8" onClick={() => setIsPopupOpen(true)}>
           <Github className="mr-2 h-4 w-4" />View on GitHub
         </Button>
-      </div>
+        <Popup 
+        isOpen={isPopupOpen} 
+        onClose={() => setIsPopupOpen(false)} 
+      />
     </div>
-      </main>
+  </div>
+  <section className="w-full bg-black" id="other-projects">
+    <AppleCardsCarouselDemo/>
+  </section>
+</main>
     </div>
   );
 }
