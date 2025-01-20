@@ -22,27 +22,17 @@ const DummyContent = ({ hrefs, category, txt }: { hrefs: string[], category: str
     async function fetchData() {
       try {
         const dataPromises = hrefs.map(async (href) => {
-          console.log(`Fetching repo data from ${href}`);
-          console.log(`Using API Key: ${process.env.GITHUB_API_KEY}`);
-          
-          const repoResponse = await axios.get(href, {
-            headers: {
-              Authorization: `Bearer ${process.env.GITHUB_API_KEY}`
-            }
-          });
-          console.log(`Repo response for ${href}:`, repoResponse.data);
+          console.log(`Fetching commit data from ${href}`);
 
-          const commitsResponse = await axios.get(`${href}/commits`, {
-            headers: {
-              Authorization: `Bearer ${process.env.GITHUB_API_KEY}`
-            }
+          const response = await axios.get(``, {
+            params: { repoUrl: href }
           });
-          console.log(`Commits response for ${href}:`, commitsResponse.data);
+          console.log(`Commits response for ${href}:`, response.data);
 
           return {
-            name: repoResponse.data.name,
-            commits: commitsResponse.data.length,
-            url: repoResponse.data.html_url,
+            url: href,
+            name: response.data.name,
+            commits: response.data.commits,
           };
         });
 
