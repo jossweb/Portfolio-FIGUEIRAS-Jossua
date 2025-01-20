@@ -96,7 +96,7 @@ const data = [
     category: "School project - web",
     title: "TopTech : a website that lists the best tech devices",
     src: "/img/toptech.webp",
-    hrefs: ["https://api.github.com/repos/jossweb/Toptech", "https://api.github.com/repos/jossweb/Calculatrice", "https://api.github.com/repos/jossweb/Moniteur"],
+    hrefs: ["https://api.github.com/repos/jossweb/Toptech"],
     content: <DummyContent hrefs={["https://api.github.com/repos/jossweb/Toptech", "https://api.github.com/repos/jossweb/Calculatrice", "https://api.github.com/repos/jossweb/Moniteur"]} category="School project - web" txt="TopTech was a team project in our computer science class during the 2022-23 school year. This website uses HTML/CSS/JS for the front-end and PHP for the server-side, particularly for the registration and login features." />,
   },
   {
@@ -110,7 +110,7 @@ const data = [
     category: "C# Project",
     title: "All my C# apps",
     src: "/img/csharp.webp",
-    hrefs: ["https://api.github.com/repos/jossweb/Stable-Diffusion-M-Chips"],
+    hrefs: ["https://api.github.com/repos/jossweb/money-management", "https://api.github.com/repos/jossweb/Calculatrice", "https://api.github.com/repos/jossweb/Moniteur"],
     content: <DummyContent hrefs={["https://api.github.com/repos/jossweb/Stable-Diffusion-M-Chips"]} category="C# Project" txt="I started programming thanks to a C# (or C-Sharp) course on the Udemy platform. This course helped me understand how a programming language works, as well as development environments. Following this training, I worked on personal projects involving small applications created using the same C# language.”" />,
   },
   {

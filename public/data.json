@@ -1,13 +1,49 @@
 {
   "repos": [
     {
-      "name": "jossweb/Portfolio-FIGUEIRAS-Jossua",
-      "commits": 11
+      "path": "jossweb/Portfolio-FIGUEIRAS-Jossua",
+      "commits": 12
     },
     {
-      "name": "sws-corp/SWS-APP",
+      "path": "sws-corp/SWS-APP",
       "commits": 5
+    },
+    {
+      "path": "sws-corp/site",
+      "commits": 21
+    },
+    {
+      "path": "sws-corp/QRCode-generator",
+      "commits": 2
+    },
+    {
+      "path": "jossweb/Toptech",
+      "commits": 9
+    },
+    {
+      "path": "jossweb/Stable-Diffusion-M-Chips",
+      "commits": 6
+    },
+    {
+      "path": "jossweb/Calculatrice",
+      "commits": 17
+    },
+    {
+      "path": "jossweb/Moniteur",
+      "commits": 37
+    },
+    {
+      "path": "jossweb/money-management",
+      "commits": 171
+    },
+    {
+      "path": "jossweb/Jeu-de-carte-NSI",
+      "commits": 60
+    },
+    {
+      "path": "jossweb/projet-NSI-illusion",
+      "commits": 12
     }
   ],
-  "lastUpdated": "2025-01-20T21:16:11.746Z"
+  "lastUpdated": "2025-01-20T21:36:47.145Z"
 }
