@@ -2,48 +2,70 @@
   "repos": [
     {
       "path": "jossweb/Portfolio-FIGUEIRAS-Jossua",
-      "commits": 12
+      "name": "Portfolio-FIGUEIRAS-Jossua",
+      "url": "https://github.com/jossweb/Portfolio-FIGUEIRAS-Jossua",
+      "commits": 13
     },
     {
       "path": "sws-corp/SWS-APP",
+      "name": "SWS-APP",
+      "url": "https://github.com/sws-corp/SWS-APP",
       "commits": 5
     },
     {
       "path": "sws-corp/site",
+      "name": "site",
+      "url": "https://github.com/sws-corp/site",
       "commits": 21
     },
     {
       "path": "sws-corp/QRCode-generator",
+      "name": "QRCode-generator",
+      "url": "https://github.com/sws-corp/QRCode-generator",
       "commits": 2
     },
     {
       "path": "jossweb/Toptech",
+      "name": "Toptech",
+      "url": "https://github.com/jossweb/Toptech",
       "commits": 9
     },
     {
       "path": "jossweb/Stable-Diffusion-M-Chips",
+      "name": "Stable-Diffusion-M-Chips",
+      "url": "https://github.com/jossweb/Stable-Diffusion-M-Chips",
       "commits": 6
     },
     {
       "path": "jossweb/Calculatrice",
+      "name": "Calculatrice",
+      "url": "https://github.com/jossweb/Calculatrice",
       "commits": 17
     },
     {
       "path": "jossweb/Moniteur",
+      "name": "Moniteur",
+      "url": "https://github.com/jossweb/Moniteur",
       "commits": 37
     },
     {
       "path": "jossweb/money-management",
+      "name": "money-management",
+      "url": "https://github.com/jossweb/money-management",
       "commits": 171
     },
     {
       "path": "jossweb/Jeu-de-carte-NSI",
+      "name": "Jeu-de-carte-NSI",
+      "url": "https://github.com/jossweb/Jeu-de-carte-NSI",
       "commits": 60
     },
     {
       "path": "jossweb/projet-NSI-illusion",
+      "name": "projet-NSI-illusion",
+      "url": "https://github.com/jossweb/projet-NSI-illusion",
       "commits": 12
     }
   ],
-  "lastUpdated": "2025-01-20T21:36:47.145Z"
+  "lastUpdated": "2025-01-21T13:37:42.792Z"
 }

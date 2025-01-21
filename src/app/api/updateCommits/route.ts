@@ -30,36 +30,30 @@ export async function GET() {
       const response = await fetch(`https://api.github.com/repos/${repo}/commits?per_page=100&page=${page}`, {
         headers: { Authorization: `Bearer ${process.env.GITHUB_API_KEY}` },
       });
-      if (!response.ok) return totalCommits;
-      const data = await response.json();
-      totalCommits += data.length;
-      if (data.length < 100) {
-        hasMoreCommits = false;
-      } else {
-        page++;
-      }
+      const commits = await response.json();
+      totalCommits += commits.length;
+      hasMoreCommits = commits.length === 100;
+      page++;
     }
 
     return totalCommits;
   }
 
-  const updatedRepos = await Promise.all(
-    REPOS.map(async (repo) => {
-      const commits = await fetchCommitsCount(repo);
-      return { path: repo, commits };
-    })
-  );
+  const reposData = await Promise.all(REPOS.map(async (repo) => {
+    const commits = await fetchCommitsCount(repo);
+    return {
+      path: repo,
+      name: repo.split('/')[1],
+      url: `https://github.com/${repo}`,
+      commits
+    };
+  }));
 
-  const newData = {
-    repos: updatedRepos,
-    lastUpdated: new Date().toISOString(),
+  const data = {
+    repos: reposData,
+    lastUpdated: new Date().toISOString()
   };
 
-  try {
-    fs.writeFileSync(dataPath, JSON.stringify(newData, null, 2));
-  } catch (error) {
-    console.error('Error writing data to file:', error);
-  }
-
-  return new Response(JSON.stringify(newData), { status: 200 });
+  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  return new Response(JSON.stringify(data), { status: 200 });
 }
