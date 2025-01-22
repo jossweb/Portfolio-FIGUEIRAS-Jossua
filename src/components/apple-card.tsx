@@ -43,7 +43,6 @@ const Content = ({ hrefs, category, txt }: { hrefs: string[], category: string, 
         setError('Failed to fetch data');
       }
     }
-
     fetchData();
   }, [hrefs]);
   return (
