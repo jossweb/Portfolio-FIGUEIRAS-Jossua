@@ -10,7 +10,6 @@ import { Github } from 'lucide-react'
 import { Navbar} from "../components/ui/navbar"
 import Popup from '../components/ui/popup';
 import AppleCardsCarouselDemo from "../components/apple-card"
-import Footer from '../components/ui/footer';
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -97,7 +96,7 @@ export default function Home() {
               className="mx-auto block"
             />
         </section>
-        <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-visible -mt-20">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center">
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
@@ -121,7 +120,6 @@ export default function Home() {
   <section className="w-full bg-black" id="other-projects">
     <AppleCardsCarouselDemo/>
   </section>
-        <Footer />
 </main>
     </div>
   );
