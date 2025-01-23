@@ -5,16 +5,16 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     
     return (
-        <nav className="absolute left-0 w-full text-[22px] flex justify-between items-center p-4 z-50">
+        <nav className="absolute left-0 w-full text-[22px] flex justify-between items-center p-4 z-50 text-center">
         <div className="flex-1"></div>
         <div className="flex-1 flex justify-center space-x-[70px] pt-3">
-            <Link href="#about-me" className="text-black">
+            <Link href="#about-me" className="text-black hover:text-gray-600">
             About Me
             </Link>
-            <Link href="#ai-project" className="text-black">
+            <Link href="#ai-project" className="text-black hover:text-gray-600">
             My Projects
             </Link>
-            <Link href="#contact" className="text-black">
+            <Link href="#contact" className="text-black hover:text-gray-600">
             Contact
             </Link>
         </div>

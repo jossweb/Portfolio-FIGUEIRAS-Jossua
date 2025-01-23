@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState, createContext, useContext } from "react"
+import React, { useEffect, useRef, useState, createContext, useContext, RefObject } from "react"
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
@@ -7,7 +7,7 @@ import Image, { type ImageProps } from "next/image"
 import { useOutsideClick } from "@/hooks/use-outside-click"
 
 interface CarouselProps {
-  items: JSX.Element[]
+  items: React.ReactNode[]
   initialScroll?: number
 }
 
@@ -30,7 +30,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = React.useState(false)
   const [canScrollRight, setCanScrollRight] = React.useState(true)
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -68,7 +67,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         left: scrollPosition,
         behavior: "smooth",
       })
-      setCurrentIndex(index)
     }
   }
 
@@ -77,7 +75,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   }
 
   return (
-    <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
+    <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex: 0 }}>
       <div className="relative w-full">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
@@ -146,37 +144,37 @@ export const Card = ({
   index: number
   layout?: boolean
 }) => {
-  const [open, setOpen] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { onCardClose, currentIndex } = useContext(CarouselContext)
+  const [open, setOpen] = useState(false);
+  const containerRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        handleClose()
+        handleClose();
       }
     }
 
     if (open) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
 
-    window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
-  }, [open])
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
-  useOutsideClick(containerRef, () => handleClose())
+  useOutsideClick(containerRef as RefObject<HTMLDivElement>, () => handleClose());
 
   const handleOpen = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   const handleClose = () => {
-    setOpen(false)
-    onCardClose(index)
-  }
+    setOpen(false);
+    onCardClose(index);
+  };
 
   return (
     <>
@@ -190,12 +188,11 @@ export const Card = ({
               className="bg-[#777]/20 backdrop-blur-lg h-full w-full fixed inset-0"
             />
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                ref={containerRef}
-                layoutId={layout ? `card-${card.title}` : undefined}
-                className="w-[40%] mx-auto bg-black h-fit z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="relative w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%] mx-auto bg-black h-fit my-10 p-4 md:p-10 rounded-3xl font-sans"
+              style={{ zIndex: 51 }}
             >
               <button
                   className="absolute top-4 right-4 h-8 w-8 bg-black rounded-full flex items-center justify-center"
@@ -243,7 +240,7 @@ export const Card = ({
         <BlurImage src={card.src} alt={card.title} fill className="object-cover absolute z-[5] inset-0" />
       </motion.button>
     </>
-  )
+  );
 }
 
 export const BlurImage = ({ height, width, src, className, alt, ...rest }: ImageProps) => {

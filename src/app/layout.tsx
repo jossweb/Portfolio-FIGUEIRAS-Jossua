@@ -6,23 +6,19 @@ const suisseRegular = localFont({
   src: '../font/SuisseIntl-Regular.otf',
   variable: '--font-suisse-regular'
 })
-
-const suisseItalic = localFont({ 
-  src: '../font/SuisseIntl-RegularItalic.otf',
-  variable: '--font-suisse-italic'
-})
-
-const suisseBoldItalic = localFont({ 
-  src: '../font/SuisseIntl-BoldItalic.ttf',
-  variable: '--font-suisse-bold-italic'
-})
-
-
 export const metadata: Metadata = {
   title: "Jossua Figueiras",
-  description: "Jossua Figueiras' personal website/ portfolio",
+  description: "Jossua Figueiras' personal website / portfolio",
+  icons: {
+    icon: [
+      {
+        url: '/img/icon-jossweb.webp',
+        type: 'image/webp',
+        sizes: '32x32'
+      }
+    ]
+  }
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${suisseRegular.variable} antialiased`}
-      >
+      <body className={`${suisseRegular.variable} antialiased`}>
         {children}
       </body>
     </html>

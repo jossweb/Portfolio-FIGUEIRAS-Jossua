@@ -15,7 +15,6 @@ interface PopupProps {
 
 export default function Popup({ isOpen, onClose }: PopupProps) {
   const [repoData, setRepoData] = useState<RepoData | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   // Scroll lock effect
   useEffect(() => {
@@ -45,8 +44,8 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
             url: foundRepo.url
           });
         }
-      } catch (error) {
-        setError('Failed to fetch data');
+      } catch {
+        console.error('Failed to fetch data');
       }
     }
 
@@ -55,10 +54,11 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
     }
   }, [isOpen]);
 
-  if (!isOpen || !repoData) return null;
+  if (!isOpen) return null;
+  if (!repoData) return null;
 
   return (
-      <AnimatePresence>
+    <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center isolate overflow-hidden text-white" style={{ zIndex: 50 }}>
           <motion.div
@@ -72,7 +72,7 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative w-[40%] mx-auto bg-black h-fit my-10 p-4 md:p-10 rounded-3xl font-sans"
+            className="relative w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%] mx-auto bg-black h-fit my-10 p-4 md:p-10 rounded-3xl font-sans"
             style={{ zIndex: 51 }}
           >
           <button
