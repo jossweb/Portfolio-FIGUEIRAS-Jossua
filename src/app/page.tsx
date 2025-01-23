@@ -20,13 +20,14 @@ export default function Home() {
     <div>
       <Navbar />
       <main className="flex flex-col items-center sm:items-start bg-[#000] min-h-screen font-[family-name:var(--font-geist-sans)] p-0">
-        <section className="h-screen w-full flex items-center justify-center bg-cover bg-center bg-[url('/img/welcome-bg.webp')]">
-          <h1 className="text-6xl font-bold text-white max-w-[70%] text-center">Welcome to the portfolio of FIGUEIRAS Jossua</h1>
-        </section>
+      <section className="h-screen w-full flex items-center justify-center bg-cover bg-center bg-[url('/img/welcome-bg.webp')] relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100"></div>
+        <h1 className="text-6xl font-bold text-white max-w-[70%] text-center relative z-10">Welcome to the portfolio of FIGUEIRAS Jossua</h1>
+      </section>
         <section className=" w-full p-4" id="about-me">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-5xl w-full mx-auto">
-            <WobbleCard
-            containerClassName="col-span-1 lg:col-span-2 h-full bg-gray-700 min-h-[180px] lg:min-h-[150px]">
+          <WobbleCard
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-red-900 min-h-[180px] lg:min-h-[150px]">
             <div className="max-w-xs">
               <h2 className="text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
                 Github
@@ -51,7 +52,7 @@ export default function Home() {
               alt="Repo github illustration"
               className="absolute -right-4 lg:-right-[20%] grayscale filter -bottom-6 object-contain rounded-2xl"/>
           </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 min-h-[150px] bg-gray-700">
+          <WobbleCard containerClassName="col-span-1 min-h-[150px] bg-purple-900">
             <h2 className="max-w-60 text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
               Computer Skills
             </h2>
@@ -70,7 +71,7 @@ export default function Home() {
               <li>C</li>
             </ul>
           </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-gray-700 min-h-[200px] lg:min-h-[200px] mb-20">
+          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[200px] lg:min-h-[200px] mb-20">
             <div className="max-w-sm">
               <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-lg lg:text-xl font-semibold tracking-[-0.015em] text-white">
                 About me
@@ -93,11 +94,11 @@ export default function Home() {
               src="/img/scroll-arrow.jpg"
               width={50}
               height={50}
-              alt="linear demo image"
+              alt="linear image"
               className="mx-auto block"
             />
         </section>
-        <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-visible -mt-20">
+        <section id="ai-project" className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-visible -mt-20">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="lightgray" />
       <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center">
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
@@ -110,18 +111,20 @@ export default function Home() {
         <p className="mt-2 text-sm text-neutral-400 mb-5">Progress: 10%</p>
         <p className="mt-2 text-sm text-neutral-400">Current step: adding llama to the mac application with coreml</p>
         <Button variant="outline" className="mt-8" onClick={() => setIsPopupOpen(true)}>
-          <Github className="mr-2 h-4 w-4" />View on GitHub
+          <Github className="mr-2 h-4 w-4" />learn more
         </Button>
         <Popup 
         isOpen={isPopupOpen} 
         onClose={() => setIsPopupOpen(false)} 
       />
     </div>
-  </div>
+  </section>
   <section className="w-full bg-black" id="other-projects">
     <AppleCardsCarouselDemo/>
   </section>
-  <ContactUs/>
+  <section id="contact" className="min-h-screen bg-auto mx-auto w-full">
+    <ContactUs/>  
+  </section>
   <Footer />
 </main>
     </div>

@@ -2,7 +2,20 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
 
-const swiss = localFont({ src: '../font/SuisseIntl-BoldItalic.ttf' })
+const suisseRegular = localFont({ 
+  src: '../font/SuisseIntl-Regular.otf',
+  variable: '--font-suisse-regular'
+})
+
+const suisseItalic = localFont({ 
+  src: '../font/SuisseIntl-RegularItalic.otf',
+  variable: '--font-suisse-italic'
+})
+
+const suisseBoldItalic = localFont({ 
+  src: '../font/SuisseIntl-BoldItalic.ttf',
+  variable: '--font-suisse-bold-italic'
+})
 
 
 export const metadata: Metadata = {
@@ -18,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${swiss.className} antialiased`}
+        className={`${suisseRegular.variable} antialiased`}
       >
         {children}
       </body>

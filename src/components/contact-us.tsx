@@ -184,7 +184,7 @@ export function ContactUs() {
 
           <div className="mb-6 flex justify-center">
             <ReCAPTCHA
-                sitekey="6Lf6rYMqAAAAANg4Nb2iB3lH03IHO6RrnZVF6LCJ"
+                sitekey="6LeXOcAqAAAAADo57sX22BlmQ5yol8G1hwo2w0Hu"
                 onChange={handleCaptchaChange}
                 size={captchaSize}
             />
