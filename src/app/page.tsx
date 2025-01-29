@@ -16,13 +16,14 @@ import Footer from "../components/ui/footer";
 import { motion } from "framer-motion";
 import LandingPage from "../components/landing-page";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
+import { useLanguage } from '../components/LanguageProvider'
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const skills = ["Hardware", "Coreml", "Programming"];
-  const languages = ["Python", "C#", "C", "Web languages"];
-
-
+  const { translations } = useLanguage()
+  const skills = translations.skills.items;
+  const languages = translations.skills.languages;
+  
   return (
     <div>
       <Navbar />
@@ -38,32 +39,35 @@ export default function Home() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
                 <Github className="h-7 w-7" />
-                Github
+                {translations.github.title}
               </CardTitle>
-              <CardDescription className="text-[#a3a3a3] text-base md:text-lg">Discover my projects and contributions</CardDescription>
+              <CardDescription className="text-[#a3a3a3] text-base md:text-lg">
+                {translations.github.description}
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm md:text-base text-muted-foreground text-[#a3a3a3]">
-                Discover my github profile, with the code of each of my public projects
+                {translations.github.content}
               </p>
             </CardContent>
             <CardFooter>
               <Button asChild className="text-sm">
                 <a href="https://github.com/jossweb" target="_blank" rel="noopener noreferrer">
-                  Visit my GitHub
+                  {translations.github.button}
                 </a>
               </Button>
             </CardFooter>
           </Card>
           <Card className="w-full bg-black text-[#fafafa]">
             <CardHeader>
-              <CardTitle className="text-xl md:text-2xl">About me</CardTitle>
-              <CardDescription className="text-[#a3a3a3] text-base md:text-lg">A brief overview of who I am</CardDescription>
+              <CardTitle className="text-xl md:text-2xl">{translations.about.title}</CardTitle>
+              <CardDescription className="text-[#a3a3a3] text-base md:text-lg">
+                {translations.about.description}
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm md:text-base text-muted-foreground text-[#a3a3a3]">
-                Hi, my name is Jossua. I’m currently studying computer science at the University of Tours in France, where I’m in my first year of a computer science degree for the 2024/25 academic year. 
-                I have a strong passion for hardware and emerging technologies, particularly in the field of AI.
+                {translations.about.content}
               </p>
             </CardContent>
           </Card>
@@ -79,7 +83,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Skills
+              {translations.skills.title}
             </motion.h2>
             <div className="flex flex-wrap justify-center gap-8">
               {skills.map((skill, index) => (
@@ -108,7 +112,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Programming Languages
+              {translations.skills.languagesTitle} {/* Correction: utiliser le bon chemin */}
             </motion.h2>
             <div className="flex flex-wrap justify-center gap-8">
               {languages.map((language, index) => (
@@ -135,17 +139,17 @@ export default function Home() {
           <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="lightgray" />
           <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-              Local Ai <br /> rediscover AI
+              {translations.aiProject.title} <br /> {translations.aiProject.subtitle}
             </h1>
             <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-              discover my work on less polluting artificial intelligence tools that respect your confidentiality...
+              {translations.aiProject.description}
             </p>
             <Progress value={10} className="w-[60%] mt-8 mb-2" />
-            <p className="mt-2 text-sm text-neutral-400 mb-5">Progress: 10%</p>
-            <p className="mt-2 text-sm text-neutral-400">Current step: adding llama to the mac application with coreml</p>
+            <p className="mt-2 text-sm text-neutral-400 mb-5">{translations.aiProject.progress}: 10%</p>
+            <p className="mt-2 text-sm text-neutral-400">{translations.aiProject.currentStep}</p>
             <Button variant="outline" className="mt-8" onClick={() => setIsPopupOpen(true)}>
               <Github className="mr-2 h-4 w-4" />
-              learn more
+              {translations.aiProject.learnMore}
             </Button>
             <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
           </div>

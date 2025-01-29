@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useLanguage } from './LanguageProvider';
 
 type CaptchaSize = 'compact' | 'normal' | 'invisible';
 
 export function ContactUs() {
+  const { translations } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [captchaSize, setCaptchaSize] = useState<CaptchaSize>('normal');
@@ -93,7 +95,7 @@ export function ContactUs() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center mb-16"
         >
-          <span className="text-gray-50">Contact Me</span>
+          <span className="text-gray-50">{translations.contact.title}</span>
         </motion.h2>
 
         <motion.form
@@ -110,13 +112,13 @@ export function ContactUs() {
                 htmlFor="lastName"
                 className="block text-sm font-medium text-zinc-400 mb-2"
               >
-                Last Name
+                {translations.contact.form.lastName}
               </label>
               <div className="relative">
                 <input
                   type="text"
                   id="lastName"
-                  placeholder="Your name here"
+                  placeholder={translations.contact.form.placeholder.lastName}
                   value={formData.lastName}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-zinc-900/50 rounded-xl border border-zinc-800 text-white placeholder:text-zinc-600 focus:outline-none focus:border-gray-300 transition-all duration-300"
@@ -129,13 +131,13 @@ export function ContactUs() {
                 htmlFor="firstName"
                 className="block text-sm font-medium text-zinc-400 mb-2"
               >
-                First Name
+                {translations.contact.form.firstName}
               </label>
               <div className="relative">
                 <input
                   type="text"
                   id="firstName"
-                  placeholder="Your first name here"
+                  placeholder={translations.contact.form.placeholder.firstName}
                   value={formData.firstName}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-zinc-900/50 rounded-xl border border-zinc-800 text-white placeholder:text-zinc-600 focus:outline-none focus:border-gray-300 transition-all duration-300"
@@ -149,13 +151,13 @@ export function ContactUs() {
               htmlFor="email"
               className="block text-sm font-medium text-zinc-400 mb-2"
             >
-              Email
+              {translations.contact.form.email}
             </label>
             <div className="relative">
               <input
                 type="email"
                 id="email"
-                placeholder="Email"
+                placeholder={translations.contact.form.placeholder.email}
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-zinc-900/50 rounded-xl border border-zinc-800 text-white placeholder:text-zinc-600 focus:outline-none focus:border-gray-300 transition-all duration-300"
@@ -168,13 +170,13 @@ export function ContactUs() {
               htmlFor="message"
               className="block text-sm font-medium text-zinc-400 mb-2"
             >
-              Message
+              {translations.contact.form.message}
             </label>
             <div className="relative">
               <textarea
                 id="message"
                 rows={5}
-                placeholder="Enter your message here..."
+                placeholder={translations.contact.form.placeholder.message}
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-zinc-900/50 rounded-xl border border-zinc-800 text-white placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-gray-300 transition-all duration-300 resize-none"
@@ -201,7 +203,9 @@ export function ContactUs() {
                     disabled={isSubmitting || !captchaValue}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="relative cursor-pointer">Send Message</span>
+                    <span className="relative cursor-pointer">
+                      {isSubmitting ? translations.contact.form.sending : translations.contact.form.send}
+                    </span>
                     <Send className="w-4 h-4 relative" />
                 </motion.button>
                 </div>

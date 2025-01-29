@@ -1,7 +1,10 @@
 "use client"
 import { motion } from "framer-motion"
+import { useLanguage } from './LanguageProvider'
 
 export default function LandingPage() {
+  const { translations } = useLanguage()
+
   return (
     <section className="relative flex items-center justify-center h-screen overflow-hidden">
       <div className="absolute inset-0">
@@ -29,14 +32,14 @@ export default function LandingPage() {
           animate={{ scale: [1, 1.03, 1] }}
           transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
         >
-          Jossua FIGUEIRAS
+          {translations.landing.title}
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl mb-8 text-gray-300"
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
         >
-          computer science student
+          {translations.landing.subtitle}
         </motion.p>
         <motion.a
           href="#contact"
@@ -44,7 +47,7 @@ export default function LandingPage() {
           whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(168, 85, 247, 0.5)" }}
           whileTap={{ scale: 0.95 }}
         >
-          Contact
+          {translations.navigation.contact}
         </motion.a>
       </motion.div>
     </section>
