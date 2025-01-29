@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local'
 import "./globals.css";
 
-const suisseRegular = localFont({ 
-  src: '../font/SuisseIntl-Regular.otf',
-  variable: '--font-suisse-regular'
-})
 export const metadata: Metadata = {
   title: "Jossua Figueiras",
   description: "Jossua Figueiras' personal website / portfolio",
@@ -19,6 +14,7 @@ export const metadata: Metadata = {
     ]
   }
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${suisseRegular.variable} antialiased`}>
+      <body>
         {children}
       </body>
     </html>
