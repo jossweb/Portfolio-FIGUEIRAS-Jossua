@@ -23,9 +23,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 p-4">
+      <nav className="fixed top-0 left-0 z-[60] p-4">
         <button onClick={toggleMenu} className="focus:outline-none text-white" aria-label="Toggle menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={25} /> : <Menu size={25} />}
         </button>
       </nav>
       <BurgerMenu isOpen={isOpen} toggleMenu={toggleMenu} isLargeScreen={isLargeScreen} />

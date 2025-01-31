@@ -82,7 +82,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, toggleMenu, isLargeScreen }) 
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={containerVariants}
-        className="fixed top-0 left-0 h-full backdrop-blur-lg bg-black/30 z-40 rounded-r-lg overflow-hidden"
+        className="fixed top-0 left-0 h-full backdrop-blur-lg bg-black/30 z-50 rounded-r-lg overflow-hidden"
       >
         <div className="flex flex-col items-end justify-between h-full p-8">
           <div className="flex flex-col items-end justify-center w-full h-full">
