@@ -32,7 +32,7 @@ export default function Home() {
         <section className="w-full p-4" id="about-me">
         <div className="container mx-auto p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="w-full bg-black text-[#fafafa]">
+          <Card className="w-full bg-white/10 text-[#fafafa]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl md:text-2xl">
                 <Github className="h-7 w-7" />
@@ -55,7 +55,7 @@ export default function Home() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="w-full bg-black text-[#fafafa]">
+          <Card className="w-full bg-white/10 text-[#fafafa]">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl">{translations.about.title}</CardTitle>
               <CardDescription className="text-[#a3a3a3] text-base md:text-lg">

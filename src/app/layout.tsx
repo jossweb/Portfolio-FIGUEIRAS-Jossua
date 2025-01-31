@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from '../components/LanguageProvider'
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Jossua Figueiras",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           {children}
+          <Analytics />
         </LanguageProvider>
       </body>
     </html>
