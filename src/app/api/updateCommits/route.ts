@@ -8,6 +8,7 @@ export async function GET() {
   const dataPath = path.join(process.cwd(), 'public/data.json');
 
   const REPOS = [
+    'jossweb/Llama-M-Chips',
     'jossweb/Portfolio-FIGUEIRAS-Jossua',
     'sws-corp/SWS-APP',
     'sws-corp/site',

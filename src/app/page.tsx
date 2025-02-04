@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import LandingPage from "../components/landing-page";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
 import { useLanguage } from '../components/LanguageProvider'
+import InfoOverlay from "../components/ui/InfoOverlay"
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -159,6 +160,7 @@ export default function Home() {
         </section>
         <Footer />
       </main>
+      <InfoOverlay />
     </div>
   );
 }

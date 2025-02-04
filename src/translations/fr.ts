@@ -64,5 +64,8 @@ export const fr = {
   footer: {
     rights: "Tous droits réservés",
     madeWith: "Jossua FIGUEIRAS"
+  },
+  cookie: {
+    message: "Ce site web utilise les cookies dans le but d'obtenir des statistiques de visites du site. Les données sont anonymisées comme le veut le RGPD."
   }
 };

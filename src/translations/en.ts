@@ -64,5 +64,8 @@ export const en = {
   footer: {
     rights: "All rights reserved",
     madeWith: "by Jossua FIGUEIRAS"
+  },
+  cookie: {
+    message: "This website uses cookies to obtain site visit statistics. The data is anonymized as required by GDPR."
   }
 };

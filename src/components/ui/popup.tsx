@@ -14,7 +14,7 @@ interface PopupProps {
 }
 
 export default function Popup({ isOpen, onClose }: PopupProps) {
-  const [repoData, setRepoData] = useState<RepoData | null>(null);
+  const [reposData, setReposData] = useState<RepoData[]>([]);
 
   // Scroll lock effect
   useEffect(() => {
@@ -33,19 +33,24 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
         const response = await fetch('/data.json');
         const data = await response.json() as { repos: RepoData[] };
         
-        const repoPath = 'jossweb/Stable-Diffusion-M-Chips';
-        const normalUrl = `https://github.com/${repoPath}`;
-        const foundRepo = data.repos.find((repo) => repo.url === normalUrl);
+        const reposPaths = [
+          'jossweb/Stable-Diffusion-M-Chips',
+          'jossweb/Llama-M-Chips'  // Ajout du second repo
+        ];
+        
+        const foundRepos = reposPaths.map(repoPath => {
+          const normalUrl = `https://github.com/${repoPath}`;
+          const foundRepo = data.repos.find((repo) => repo.url === normalUrl);
+          return foundRepo || {
+            name: repoPath.split('/')[1],
+            commits: 0,
+            url: normalUrl
+          };
+        });
 
-        if (foundRepo) {
-          setRepoData({
-            name: foundRepo.name,
-            commits: foundRepo.commits,
-            url: foundRepo.url
-          });
-        }
-      } catch {
-        console.error('Failed to fetch data');
+        setReposData(foundRepos);
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
       }
     }
 
@@ -54,8 +59,7 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
-  if (!repoData) return null;
+  if (!isOpen || reposData.length === 0) return null;
 
   return (
     <AnimatePresence>
@@ -92,14 +96,16 @@ export default function Popup({ isOpen, onClose }: PopupProps) {
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  key={repoData.url}
-                  onClick={() => window.open(repoData.url, '_blank')}
-                  className="hover:bg-gray-700 cursor-pointer border-b-2 border-white"
-                >
-                  <td className="p-2">{repoData.name}</td>
-                  <td className="p-2">{repoData.commits}</td>
-                </tr>
+                {reposData.map((repo) => (
+                  <tr
+                    key={repo.url}
+                    onClick={() => window.open(repo.url, '_blank')}
+                    className="hover:bg-gray-700 cursor-pointer"
+                  >
+                    <td className="p-2 border-b border-white">{repo.name}</td>
+                    <td className="p-2 border-b border-white">{repo.commits}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <p className="text-red-800 pt-5 pb-2 text-center">2 others privates repos</p>

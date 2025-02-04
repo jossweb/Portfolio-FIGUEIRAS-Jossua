@@ -1,10 +1,16 @@
 {
   "repos": [
     {
+      "path": "jossweb/Llama-M-Chips",
+      "name": "Llama-M-Chips",
+      "url": "https://github.com/jossweb/Llama-M-Chips",
+      "commits": 4
+    },
+    {
       "path": "jossweb/Portfolio-FIGUEIRAS-Jossua",
       "name": "Portfolio-FIGUEIRAS-Jossua",
       "url": "https://github.com/jossweb/Portfolio-FIGUEIRAS-Jossua",
-      "commits": 14
+      "commits": 28
     },
     {
       "path": "sws-corp/SWS-APP",
@@ -34,7 +40,7 @@
       "path": "jossweb/Stable-Diffusion-M-Chips",
       "name": "Stable-Diffusion-M-Chips",
       "url": "https://github.com/jossweb/Stable-Diffusion-M-Chips",
-      "commits": 6
+      "commits": 9
     },
     {
       "path": "jossweb/Calculatrice",
@@ -67,5 +73,5 @@
       "commits": 12
     }
   ],
-  "lastUpdated": "2025-01-22T18:09:57.792Z"
+  "lastUpdated": "2025-02-04T16:35:34.505Z"
 }
