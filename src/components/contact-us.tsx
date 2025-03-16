@@ -86,7 +86,7 @@ export function ContactUs() {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-auto mx-auto w-full">
+    <section id="contact" className="pb-[40px] bg-auto mx-auto w-full">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import LandingPage from "../components/landing-page";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
 import { useLanguage } from '../components/LanguageProvider'
-import InfoOverlay from "../components/ui/InfoOverlay"
+import AppleSwiftChallenge from "../components/apple-swift-challenge";
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -130,37 +130,13 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          id="ai-project"
-          className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-visible -mt-20"
-        >
-          <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="lightgray" />
-          <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center">
-            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-              {translations.aiProject.title} <br /> {translations.aiProject.subtitle}
-            </h1>
-            <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-              {translations.aiProject.description}
-            </p>
-            <Progress value={10} className="w-[60%] mt-8 mb-2" />
-            <p className="mt-2 text-sm text-neutral-400 mb-5">{translations.aiProject.progress}: 10%</p>
-            <p className="mt-2 text-sm text-neutral-400">{translations.aiProject.currentStep}</p>
-            <Button variant="outline" className="mt-8" onClick={() => setIsPopupOpen(true)}>
-              <Github className="mr-2 h-4 w-4" />
-              {translations.aiProject.learnMore}
-            </Button>
-            <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
-          </div>
-        </section>
+        <AppleSwiftChallenge />
         <section className="w-full bg-black" id="other-projects">
           <AppleCardsCarouselDemo />
         </section>
-        <section id="contact" className="min-h-screen bg-auto mx-auto w-full">
-          <ContactUs />
-        </section>
+        <ContactUs />
         <Footer />
       </main>
-      <InfoOverlay />
     </div>
   );
 }

@@ -22,22 +22,15 @@ export default function LandingPage() {
         />
       </div>
       <motion.div
-        className="relative z-10 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        className="relative z-10 text-center opacity-100"
       >
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-          animate={{ scale: [1, 1.03, 1] }}
-          transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
         >
           {translations.landing.title}
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl mb-8 text-gray-300"
-          animate={{ y: [0, -5, 0] }}
-          transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
         >
           {translations.landing.subtitle}
         </motion.p>

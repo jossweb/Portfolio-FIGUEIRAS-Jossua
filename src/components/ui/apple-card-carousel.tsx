@@ -87,7 +87,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           <div
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
-              "max-w-7xl mx-auto", 
+              "max-w-7xl ml-[2%]", 
             )}
           >
             {items.map((item, index) => (

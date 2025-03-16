@@ -37,6 +37,11 @@ export const en = {
     currentStep: "Current step: adding llama to mac application with coreml",
     learnMore: "Learn more"
   },
+  studentChallenge: {
+    text: "	I like setting myself challenges, which is why I have decided to participate in the Swift Student Challenge in 2026. It will be a challenge for me on a technical level since I have had very little practice with Swift and its frameworks. The first challenge will be to gain confidence with these technologies. The second challenge will be to come up with a unique concept in order to deliver an outstanding and high-quality project.",
+    link: "https://developer.apple.com/swift-student-challenge/",
+    buttonText: "Learn more"
+  },
   otherProjects: {
     title: "Other Projects",
     description: "Discover my other achievements",

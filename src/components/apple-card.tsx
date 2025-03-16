@@ -200,7 +200,7 @@ export default function AppleCardsCarouselDemo() {
   
   return (
     <div className="w-full h-full py-20 bg-black">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white font-sans">
+      <h2 className="max-w-7xl pl-10 text-xl md:text-5xl font-bold text-white font-sans">
         {language === 'fr' ? 'Mes autres projets' : 'My other projects'}
       </h2>
       <Carousel items={cards} />

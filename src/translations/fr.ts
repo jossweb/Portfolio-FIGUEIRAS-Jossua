@@ -1,3 +1,6 @@
+import { link } from "fs";
+import { text } from "stream/consumers";
+
 export const fr = {
   navigation: {
     home: "Accueil",
@@ -36,6 +39,11 @@ export const fr = {
     progress: "Progression",
     currentStep: "Étape actuelle : ajout de llama à l'application mac avec coreml",
     learnMore: "En savoir plus"
+  },
+  studentChallenge: {
+    text: "J’aime me fixer des défis, c’est pourquoi j’ai décidé de participer au Swift Student Challenge en 2026. Ce sera un défi pour moi sur le plan technique, car j’ai très peu pratiqué Swift et ses frameworks. Le premier défi sera donc de prendre de l’assurance avec ces technologies. Le second défi sera de trouver une idée de concept afin de fournir un projet hors du commun et d’une qualité exceptionnelle.",
+    link: "https://developer.apple.com/fr/swift-student-challenge/",
+    buttonText: "En savoir plus"
   },
   otherProjects: {
     title: "Autres Projets",
