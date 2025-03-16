@@ -3,8 +3,8 @@ export const fr = {
     home: "Accueil",
     aboutMe: "À propos",
     skills: "Compétences",
-    aiProject: "Projet IA",
-    otherProjects: "Autres projets",
+    Studentdev: "Challenge",
+    otherProjects: "Projets",
     contact: "Contact"
   },
   landing: {
@@ -25,7 +25,7 @@ export const fr = {
   },
   skills: {
     title: "Compétences",
-    items: ["Hardware", "Coreml", "Programmation"],
+    items: ["Hardware", "Programmation"],
     languagesTitle: "Langages de programmation",
     languages: ["Python", "C#", "C", "Langages Web"]
   },
@@ -43,7 +43,7 @@ export const fr = {
     buttonText: "En savoir plus"
   },
   otherProjects: {
-    title: "Autres Projets",
+    title: "Projets",
     description: "Découvrez mes autres réalisations",
     viewProject: "Voir le projet",
     sourceCode: "Code source"

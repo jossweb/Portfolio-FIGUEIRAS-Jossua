@@ -3,8 +3,8 @@ export const en = {
     home: "Home",
     aboutMe: "About me",
     skills: "Skills",
-    aiProject: "AI Project",
-    otherProjects: "Other projects",
+    Studentdev: "Challenge",
+    otherProjects: "Projects",
     contact: "Contact"
   },
   landing: {
@@ -25,7 +25,7 @@ export const en = {
   },
   skills: {
     title: "Skills",
-    items: ["Hardware", "Coreml", "Programming"],
+    items: ["Hardware", "Programming"],
     languagesTitle: "Programming Languages",
     languages: ["Python", "C#", "C", "Web Languages"]
   },
@@ -43,7 +43,7 @@ export const en = {
     buttonText: "Learn more"
   },
   otherProjects: {
-    title: "Other Projects",
+    title: "Projects",
     description: "Discover my other achievements",
     viewProject: "View project",
     sourceCode: "Source code"

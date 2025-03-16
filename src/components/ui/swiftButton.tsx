@@ -123,8 +123,6 @@ export default function GradientButton({
       </Link>
     )
   }
-
-  // Sinon, utiliser un bouton standard
   return (
     <button
       className={buttonClasses}

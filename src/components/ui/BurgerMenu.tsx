@@ -27,7 +27,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, toggleMenu, isLargeScreen }) 
   const menuItems = [
     { id: "about-me", text: translations.navigation.aboutMe },
     { id: "skills", text: translations.navigation.skills },
-    { id: "ai-project", text: translations.navigation.aiProject },
+    { id: "apple-swift-challenge", text: translations.navigation.Studentdev },
     { id: "other-projects", text: translations.navigation.otherProjects },
     { id: "contact", text: translations.navigation.contact }
   ]
