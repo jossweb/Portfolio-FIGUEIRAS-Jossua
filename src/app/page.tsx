@@ -1,12 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react";
-import { Spotlight } from "../components/ui/Spotlight";
-import { Progress } from "@/components/ui/progress";
 import { Button } from "../components/ui/button";
 import { Github } from "lucide-react";
 import Navbar from "../components/ui/navbar";
-import Popup from "../components/ui/popup";
 import AppleCardsCarouselDemo from "../components/apple-card";
 import { ContactUs } from "../components/contact-us";
 import Footer from "../components/ui/footer";
@@ -17,8 +13,7 @@ import { useLanguage } from '../components/LanguageProvider'
 import AppleSwiftChallenge from "../components/apple-swift-challenge";
 
 export default function Home() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const { translations } = useLanguage()
+  const { translations } = useLanguage();
   const skills = translations.skills.items;
   const languages = translations.skills.languages;
   

@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { Carousel, Card } from '@/components/ui/apple-card-carousel';
 import { useLanguage } from './LanguageProvider';
