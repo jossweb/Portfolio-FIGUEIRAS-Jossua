@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState, createContext, useContext, RefObject } from "react"
-import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react"
+import { IconX } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import Image, { type ImageProps } from "next/image"
@@ -78,7 +78,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex: 0 }}>
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-4 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -114,23 +114,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end gap-2 mr-10">
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-neutral-800 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <IconArrowNarrowLeft className="h-6 w-6 text-white" />
-          </button>
-          <button
-            className="relative z-40 h-10 w-10 rounded-full bg-neutral-800 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <IconArrowNarrowRight className="h-6 w-6 text-white" />
-          </button>
         </div>
-      </div>
     </CarouselContext.Provider>
   )
 }
@@ -208,11 +192,11 @@ export const Card = ({
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="text-2xl md:text-5xl font-semibold text-white mt-4"
+                className="text-2xl md:text-4xl font-semibold text-white mt-4"
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
+              <div className="py-4">{card.content}</div>
             </motion.div>
           </div>
         )}

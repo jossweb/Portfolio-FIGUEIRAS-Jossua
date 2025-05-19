@@ -9,7 +9,7 @@ interface RepoData {
   url: string;
 }
 
-const Content = ({ hrefs, txt }: { hrefs: string[], txt: string }) => {
+const Content = ({ hrefs, txt, links }: { hrefs: string[], txt: string, links?: [string, string][] }) => {
   const [repoData, setRepoData] = useState<RepoData[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -64,11 +64,8 @@ const Content = ({ hrefs, txt }: { hrefs: string[], txt: string }) => {
           </thead>
           <tbody>
             {repoData.map((repo) => (
-              <tr
-                key={repo.url}
-                onClick={() => window.open(repo.url, '_blank')}
-                className="hover:bg-gray-700 cursor-pointer"
-              >
+              <tr key={repo.url} onClick={() => window.open(repo.url, '_blank')}
+                className="hover:bg-gray-500 cursor-pointer">
                 <td className="p-2 border-b border-white">{repo.name}</td>
                 <td className="p-2 border-b border-white">{repo.commits}</td>
               </tr>
@@ -76,6 +73,16 @@ const Content = ({ hrefs, txt }: { hrefs: string[], txt: string }) => {
           </tbody>
         </table>
       ) : null}
+      {links && links.length > 0 && (
+          <div className="flex flex-row justify-center gap-4 pb-6">
+            {links.map(([url, label]) => (
+              <a key={url} href={url} target="_blank" rel="noopener noreferrer"
+                className="px-4 py-2 my-5 mt-8 rounded-xl transition-colors bg-gradient-to-br from-purple-900 to-white/10 transition-transform duration-400 hover:scale-110">
+                {label}
+              </a>
+            ))}
+          </div>
+      )}
       <p className="text-justify">{txt}</p>
       {error && <p className="text-red-500">{error}</p>}
     </div>
@@ -88,6 +95,11 @@ const projectTranslations = {
       category: "Portfolio",
       title: "This website 😄",
       text: "This portfolio is an opportunity for me to showcase my work and explore the Next.js web technology."
+    },
+    Web : {
+      category: "Web",
+      title: "All my web projects",
+      text: "Discover all my web projects !"
     },
     nuitInfo: {
       category: "Night of info 2024",
@@ -120,6 +132,11 @@ const projectTranslations = {
       category: "Portfolio",
       title: "Ce site web 😄",
       text: "Ce portfolio est une opportunité pour moi de présenter mon travail et d'explorer la technologie web Next.js."
+    },
+      Web : {
+      category: "Web",
+      title: "Tout mes projets web",
+      text: "Découvrez tout mes projets web !"
     },
     nuitInfo: {
       category: "Nuit de l'info 2024",
@@ -160,6 +177,13 @@ export default function AppleCardsCarouselDemo() {
       src: "/img/portfolio.webp",
       hrefs: ["https://api.github.com/repos/jossweb/Portfolio-FIGUEIRAS-Jossua"],
       content: <Content hrefs={["https://api.github.com/repos/jossweb/Portfolio-FIGUEIRAS-Jossua"]} txt={t.portfolio.text} />,
+    },
+    {
+      category: t.Web.category,
+      title: t.Web.title,
+      src: "/img/web.webp",
+      hrefs: [],
+      content: <Content hrefs={[""]} txt={t.portfolio.text} links={[["https://portfolio-demo.jossweb.fr", "portfolio-demo"]]} />,
     },
     {
       category: t.nuitInfo.category,
