@@ -32,7 +32,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollRight, setCanScrollRight] = React.useState(true)
 
   if(canScrollLeft && canScrollRight) {
-    print();
+    
   }
 
   useEffect(() => {
