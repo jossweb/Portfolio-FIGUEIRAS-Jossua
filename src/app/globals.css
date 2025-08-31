@@ -16,6 +16,7 @@
   --background: #F9ECDF;
   --foreground: #5D3136;
   --font-work-sans: "Work Sans", sans-serif;
+  --radius: 12px;
 }
 body {
   background: var(--background);
