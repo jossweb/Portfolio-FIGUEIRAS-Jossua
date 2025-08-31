@@ -12,7 +12,7 @@ export default function NavButton({ label, url, icon, alt, imgw}: NavButtonProps
     return(
         <a 
           href={url} 
-          className="group flex flex-col w-[200px] px-5 py-2 border border-[var(--foreground)] rounded-[var(--radius)] items-center justify-center 
+          className="group flex flex-col w-[45%] md:w-[200px] px-5 py-2 border border-[var(--foreground)] rounded-[var(--radius)] items-center justify-center 
                      transition-transform duration-300 hover:scale-110">
             <div className="h-[60px] flex items-center justify-center">
                 <Image
@@ -23,7 +23,7 @@ export default function NavButton({ label, url, icon, alt, imgw}: NavButtonProps
                     style={{ height: "auto" }}
                     className="transition-transform duration-500 group-hover:rotate-[360deg]"/>
             </div>
-            <h1 className="glitch text-[30px] transition-transform duration-300 group-hover:scale-110">
+            <h1 className="glitch text-[25px] md:text-[30px] transition-transform duration-300 group-hover:scale-110">
                 {label}
             </h1>
         </a>

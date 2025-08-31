@@ -11,7 +11,7 @@ export default function About(){
                 style={{ height: "auto" }}
                 className="hidden md:block"/>
 
-            <div className="flex flex-col gap-5 md:max-w-[40%] md:max-w-[800px]">
+            <div className="flex flex-col gap-4 md:max-w-[40%] md:max-w-[800px] px-5 md:px-0">
                 <h1 className="glitch text-[42px]">About me</h1>
                 <p className="text-[20px]">Hi, I’m Jossua, a second-year Computer Science student at the University of Tours.
 I first got into computer science through hardware, then I became interested in other areas such as web programming and algorithms.
