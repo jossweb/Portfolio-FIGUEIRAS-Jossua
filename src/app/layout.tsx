@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
+import { Work_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { LanguageProvider } from '../components/LanguageProvider'
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "600", "700", "900"],
+});
+
+const glitch = localFont({
+  src: "/fonts/Glitch0.ttf",
+  variable: "--font-glitch",
+  weight: "400",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Jossua Figueiras",
-  description: "Jossua Figueiras' personal website / portfolio",
-  icons: {
-    icon: [
-      {
-        url: '/img/icon-jossweb.webp',
-        type: 'image/webp',
-        sizes: '32x32'
-      }
-    ]
-  }
+  title: "Portfolio FIGUEIRAS Jossua",
+  description: "Portfolio FIGUEIRAS Jossua", //need to change it !!!
 };
 
 export default function RootLayout({
@@ -24,13 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <LanguageProvider>
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </LanguageProvider>
+    <html lang="fr">
+      <body className={`${workSans.variable} ${glitch.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
