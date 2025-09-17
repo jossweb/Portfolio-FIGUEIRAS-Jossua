@@ -2,7 +2,7 @@ import NavButton from "../../components/nav-button"
 
 export default function Nav(){
     return(
-        <div className="flex flex-col justify-center items-center w-full gap-5 text-[42px] glitch w-full">
+        <div className="flex flex-col justify-center items-center w-full gap-5 text-[42px] glitch w-full w-full max-w-[2440px]">
             <h1>Chapters</h1>
             <nav className="w-full flex flex-row gap-5 flex-wrap justify-center">
                 <NavButton label="About me" url="#" icon="/img/nav-icons/1.svg" alt="1" imgw={25}/>

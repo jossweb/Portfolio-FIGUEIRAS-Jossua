@@ -1,14 +1,16 @@
 import Hero from "./sections/landing/hero"
 import Nav from "./sections/landing/nav"
 import About from "./sections/landing/about"
+import Project from "./sections/landing/projects";
 
 export default function Home() {
   return (
-    <div className="">
-      <main className="flex flex-col gap-[32px] row-start-2 items-start">
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <main className="w-full flex flex-col items-center">
         <Hero/>
         <Nav/>
         <About/>
+        <Project/>
       </main>
     </div>
   );

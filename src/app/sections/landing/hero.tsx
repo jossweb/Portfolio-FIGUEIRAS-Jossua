@@ -2,7 +2,7 @@ import { Linkedin, Github } from "lucide-react";
 
 export default function Hero(){
     return(
-        <header className="flex flex-col h-screen w-full justify-center px-[20px]">
+        <header className="flex flex-col h-screen w-full justify-center px-[20px] w-full max-w-[2440px] aspect-[16/9]">
           <h1 className="font-semibold text-[100px] md:text-[200px] leading-none tracking-tighter">Hi, I’m Jossua</h1>
           <h2 className="glitch font-normal text-[30px] md:text-[42px] pl-3">Computer sciences student</h2>
           <div className="flex flex-row pt-[20px] gap-5 ml-3 mb-20">

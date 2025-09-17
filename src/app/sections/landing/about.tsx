@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About(){
     return(
-        <section id="about" className="flex flex-row w-full justify-center items-center w-full mt-[100px]">
+        <section id="about" className="flex flex-row w-full justify-center items-center w-full mt-[200px] w-full max-w-[2440px]">
             <Image
                 src="/img/setup2025.webp"
                 alt="setup 2025"
