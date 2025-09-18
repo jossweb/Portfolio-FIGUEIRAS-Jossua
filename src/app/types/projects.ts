@@ -1,4 +1,4 @@
-export interface Project {
+export interface ProjectData {
   name: string;
   description: string;
   github: string | null;

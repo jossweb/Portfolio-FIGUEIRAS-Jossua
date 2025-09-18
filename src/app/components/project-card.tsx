@@ -1,31 +1,66 @@
 import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
+import { ProjectData } from "../types/projects";
 
-export default function ProjectCard() {
+interface ProjectCardProps {
+  project: ProjectData;
+  priority?: boolean;
+}
+
+export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] rounded w-[20%] overflow-hidden flex flex-col">
+    <div className="bg-[var(--background)] text-[var(--foreground)] rounded w-full sm:w-[48%] xl:w-[30%] max-w-[600px] overflow-hidden flex flex-col shadow-lg">
       <div className="relative w-full aspect-[16/9]">
         <Image
-          src="/img/flanerie.png"
-          alt="setup 2025"
+          src={project.imgPath}
+          alt={project.name}
           fill
           className="object-cover"
-          priority
+          priority={priority}
         />
+        {project.type && (
+          <span className="absolute top-2 left-2 z-10 bg-[var(--foreground)]/90 text-[var(--background)] text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full shadow-md backdrop-blur-sm pointer-events-none">
+            {project.type}
+          </span>
+        )}
       </div>
 
-      <div className="p-4">
-        <h3 className="glitch text-3xl mb-4">Titre</h3>
-        <p className="text-lg">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      <div className="p-4 flex flex-col h-full">
+        <h3 className="glitch text-3xl mb-3">{project.name}</h3>
+
+        <p className="leading-relaxed flex-grow">
+          {project.description}
         </p>
-        <div className="flex flex-row gap-3 my-5">
-          <span className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-2 py-1">Symfony</span>
-          <span className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-2 py-1">Tailwind css</span>
-          <span className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-2 py-1">Mysql</span>
-          <span className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-2 py-1">Doctrine</span>
+
+        <div className="flex flex-wrap gap-2 my-4">
+          {project.technos.map(t => (
+            <span
+              key={t}
+              className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-3 py-1 text-xs">
+              {t}
+            </span>
+          ))}
         </div>
-        <div className="flex flex-row">
-          <button className="bg-[var(--foreground)] text-[var(--background)] px-2 py-1 rounded-3xl">Access to website</button>
+
+        <div className="flex flex-row justify-center w-full gap-4 mt-auto">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-row items-center gap-2 bg-[var(--foreground)] text-[var(--background)] px-3 py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--background)] hover:text-[var(--foreground)] hover:border hover:border-[var(--foreground)] w-[45%] justify-center">
+              <Github className="transition-transform duration-300 group-hover:rotate-6" size={18} /> Github
+            </a>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-row items-center gap-2 border border-[var(--foreground)] px-3 py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--foreground)] hover:text-[var(--background)] w-[45%] justify-center">
+              <ExternalLink className="transition-transform duration-300 group-hover:rotate-6" size={18} /> Visit
+            </a>
+          )}
         </div>
       </div>
     </div>
