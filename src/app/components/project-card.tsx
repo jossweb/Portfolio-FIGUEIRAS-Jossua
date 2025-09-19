@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   return (
-    <div className="bg-[var(--background)] text-[var(--foreground)] rounded w-full sm:w-[48%] xl:w-[30%] max-w-[600px] overflow-hidden flex flex-col shadow-lg">
+    <div className="bg-[var(--background)] text-[var(--foreground)] rounded-xl w-full sm:w-[48%] xl:w-[30%] max-w-[600px] overflow-hidden flex flex-col shadow-lg">
       <div className="relative w-full aspect-[16/9]">
         <Image
           src={project.imgPath}
@@ -19,36 +19,36 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
           priority={priority}
         />
         {project.type && (
-          <span className="absolute top-2 left-2 z-10 bg-[var(--foreground)]/90 text-[var(--background)] text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full shadow-md backdrop-blur-sm pointer-events-none">
+          <span className="absolute top-2 left-2 z-10 bg-[var(--foreground)]/90 text-[var(--background)] text-[10px] sm:text-xs font-semibold tracking-wide uppercase px-2 py-0.5 sm:px-3 sm:py-1 rounded-full shadow-md backdrop-blur-sm pointer-events-none">
             {project.type}
           </span>
         )}
       </div>
 
-      <div className="p-4 flex flex-col h-full">
-        <h3 className="glitch text-3xl mb-3">{project.name}</h3>
+      <div className="p-3 sm:p-4 flex flex-col h-full">
+        <h3 className="glitch text-2xl sm:text-3xl mb-2 sm:mb-3">{project.name}</h3>
 
-        <p className="leading-relaxed flex-grow">
+        <p className="leading-relaxed flex-grow text-sm sm:text-base">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 my-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 my-3 sm:my-4">
           {project.technos.map(t => (
             <span
               key={t}
-              className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-3 py-1 text-xs">
+              className="bg-[#EDDBD3] text-[var(--foreground)] rounded-3xl px-2.5 py-1 text-[10px] sm:text-xs">
               {t}
             </span>
           ))}
         </div>
 
-        <div className="flex flex-row justify-center w-full gap-4 mt-auto">
+        <div className="flex flex-col sm:flex-row justify-center w-full gap-2 sm:gap-4 mt-auto">
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-row items-center gap-2 bg-[var(--foreground)] text-[var(--background)] px-3 py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--background)] hover:text-[var(--foreground)] hover:border hover:border-[var(--foreground)] w-[45%] justify-center">
+              className="group flex flex-row items-center gap-2 bg-[var(--foreground)] text-[var(--background)] px-3 py-2 sm:px-3 sm:py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--background)] hover:text-[var(--foreground)] hover:border hover:border-[var(--foreground)] w-full sm:w-[48%] justify-center">
               <Github className="transition-transform duration-300 group-hover:rotate-6" size={18} /> Github
             </a>
           )}
@@ -57,7 +57,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-row items-center gap-2 border border-[var(--foreground)] px-3 py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--foreground)] hover:text-[var(--background)] w-[45%] justify-center">
+              className="group flex flex-row items-center gap-2 border border-[var(--foreground)] px-3 py-2 sm:px-3 sm:py-2 rounded-[var(--radius)] text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-[var(--foreground)] hover:text-[var(--background)] w-full sm:w-[48%] justify-center">
               <ExternalLink className="transition-transform duration-300 group-hover:rotate-6" size={18} /> Visit
             </a>
           )}

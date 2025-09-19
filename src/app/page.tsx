@@ -8,7 +8,7 @@ import Footer from "./sections/landing/footer"
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center">
+    <div className="w-full min-h-screen flex justify-center items-center overflow-hidden">
       <main className="w-full flex flex-col items-center">
         <Hero/>
         <Nav/>

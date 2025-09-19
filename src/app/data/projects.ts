@@ -3,7 +3,7 @@ import { ProjectData } from "../types/projects";
 export const projects: ProjectData[] = [
   {
     name: "Flan'erie",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "Flan’erie is a project currently in development. It is the e-commerce website of a flan shop based in Orléans. Through this site, customers can place online orders, and everything is managed by the company’s staff via the admin dashboard.”",
     github: null,
     link: "https://dev.flanerie-orleans.fr",
     type: "Web",
@@ -12,7 +12,7 @@ export const projects: ProjectData[] = [
   },
   {
     name: "Jossnet",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "Jossnet is the name of a series of projects focused on network protocols. I first started by experimenting with the Noise Protocol (a framework that allows you to create custom protocols), and then developed a new version in C and Objective-C based on TCP/IP. This work is intended purely for educational purposes and is not meant for production use. (Disclaimer: only the code of the first version is currently available on GitHub).",
     github: "https://github.com/jossweb/Jossnet-Core",
     link: "https://jossnet.com",
     type: "Network",
@@ -21,7 +21,7 @@ export const projects: ProjectData[] = [
   },
   {
     name: "Skillup",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "Skillup is a website designed to connect teachers who publish their courses on the platform with users who can access them. Skillup is a group project developed as part of my studies.",
     github: "https://github.com/jossweb/SkillUp",
     link: "https://skillup.great-site.net",
     type: "Web",
@@ -30,7 +30,7 @@ export const projects: ProjectData[] = [
   },
   {
     name: "Portfolio",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "This portfolio: find the code and all the information on GitHub.",
     github: "https://github.com/jossweb/Portfolio-FIGUEIRAS-Jossua",
     link: "https://jossua.dev",
     type: "Web",
@@ -39,7 +39,7 @@ export const projects: ProjectData[] = [
   },
     {
     name: "Nuit de l’info",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "In 2024, we took part in the Nuit de l’Info and won a gold medal.",
     github: "https://github.com/sws-corp",
     link: "https://www.sws-corp.tech/",
     type: "Challenges",
@@ -48,7 +48,7 @@ export const projects: ProjectData[] = [
   },
     {
     name: "C game",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    description: "A small C game that serves as a demo of the Missionaries and Cannibals problem. It is a group project carried out as part of my studies.",
     github: "https://github.com/jossweb/probleme-missionnaires-et-cannibales",
     link: "https://remyweb.fr/missionnaires-cannibales/",
     type: "C-game",
