@@ -3,6 +3,8 @@ import Nav from "./sections/landing/nav"
 import About from "./sections/landing/about"
 import Project from "./sections/landing/projects";
 import Contactme from "./sections/landing/contact-me"
+import Social from "./sections/landing/social"
+import Footer from "./sections/landing/footer"
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         <About/>
         <Project/>
         <Contactme/>
+        <Social/>
+        <Footer/>
       </main>
     </div>
   );
