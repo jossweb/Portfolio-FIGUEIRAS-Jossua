@@ -2,6 +2,7 @@ import Hero from "./sections/landing/hero"
 import Nav from "./sections/landing/nav"
 import About from "./sections/landing/about"
 import Project from "./sections/landing/projects";
+import Contactme from "./sections/landing/contact-me"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Nav/>
         <About/>
         <Project/>
+        <Contactme/>
       </main>
     </div>
   );
