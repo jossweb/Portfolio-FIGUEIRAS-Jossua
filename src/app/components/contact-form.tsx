@@ -88,7 +88,7 @@ export function ContactMe() {
   };
 
   return (
-    <div id="contact" className="mx-auto w-full bg-[var(--foreground)] text-black px-20 py-8 rounded-3xl">
+    <div className="mx-auto w-full bg-[var(--foreground)] text-black px-20 py-8 rounded-3xl">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
