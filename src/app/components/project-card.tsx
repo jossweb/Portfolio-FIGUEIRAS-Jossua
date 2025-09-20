@@ -8,6 +8,12 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
+  const hasGithub = Boolean(project.github);
+  const hasLink = Boolean(project.link);
+  const btnCount = (hasGithub ? 1 : 0) + (hasLink ? 1 : 0);
+  const btnRowClass =
+    `flex flex-col sm:flex-row w-full gap-2 sm:gap-4 mt-auto ${btnCount === 1 ? 'sm:justify-start' : 'sm:justify-between'}`;
+
   return (
     <div className="bg-[var(--background)] text-[var(--foreground)] rounded-xl w-full sm:w-[48%] xl:w-[30%] max-w-[600px] overflow-hidden flex flex-col shadow-lg">
       <div className="relative w-full aspect-[16/9]">
@@ -42,7 +48,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center w-full gap-2 sm:gap-4 mt-auto">
+        <div className={btnRowClass}>
           {project.github && (
             <a
               href={project.github}
