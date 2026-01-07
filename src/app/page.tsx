@@ -1,7 +1,6 @@
 import Hero from "./sections/landing/hero"
 import Nav from "./sections/landing/nav"
 import About from "./sections/landing/about"
-import Project from "./sections/landing/projects";
 import Contactme from "./sections/landing/contact-me"
 import Social from "./sections/landing/social"
 import Footer from "./sections/landing/footer"
@@ -15,19 +14,24 @@ export default function Home() {
       card={{
         src: project.imgPath,
         title: project.name,
-        category: project.type || "Projet",
+        category: project.type || "Project",
         content: (
-          <div className="p-4 bg-[#F5F5F7] dark:bg-neutral-800 rounded-3xl mb-4">
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+          <div className="p-4 rounded-3xl mb-4">
+            <p className="text-white/70 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-white/90">
                 {project.name}
               </span>{" "}
               {project.description}
             </p>
             {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-blue-500 hover:underline">
-                Visiter le site
-              </a>
+              <div className="flex flex-row gap-5">
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-white/90 text-xl hover:bg-black/40 transition-all duration-500 px-2 py-1 bg-transparent rounded">Visit the website</a>
+                )}
+                {project.github && (
+                  <a href={project.github} target="_blank" className="mt-4 inline-block text-white/90 text-xl hover:bg-black/40 px-2 py-1 bg-transparent rounded transition-all duration-500">View on GitHub</a>
+                )}
+              </div>
             )}
           </div>
         ),
@@ -41,8 +45,8 @@ export default function Home() {
         <Hero/>
         <Nav/>
         <About/>
-        <div className="w-full h-full py-20">
-           <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-10">Mes Projets</h2>
+        <div className="flex flex-col h-screen w-full px-[20px] w-full ">
+           <h2 className="max-w-7xl pl-4 mx-auto text-[45px] mt-10 glitch text-[color:var(--color-alt)]">My Projects</h2>
         <Carousel items={cards} />
         </div>
         <Contactme/>

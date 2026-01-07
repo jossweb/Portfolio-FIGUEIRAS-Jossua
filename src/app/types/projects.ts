@@ -5,5 +5,4 @@ export interface ProjectData {
   link: string | null;
   type: string | null;
   imgPath: string;
-  technos: string[];
 }
