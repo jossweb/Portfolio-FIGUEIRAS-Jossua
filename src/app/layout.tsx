@@ -18,7 +18,7 @@ const glitch = localFont({
 
 export const metadata: Metadata = {
   title: "Portfolio FIGUEIRAS Jossua",
-  description: "Portfolio FIGUEIRAS Jossua 2025",
+  description: "Portfolio FIGUEIRAS Jossua 2026",
 };
 
 export default function RootLayout({

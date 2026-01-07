@@ -12,7 +12,7 @@ export const projects: ProjectData[] = [
   },
   {
     name: "Silicon map",
-    description: "is a Java desktop application developed as part of a group project (two people) during the second year of university studies.",
+    description: "is a Java desktop application developed as a two-person group project during my second year of university, using Maven for dependency management and JavaFX for the UI.",
     github: "https://github.com/jossweb/silicon-map",
     link: null,
     type: "Desktop App",

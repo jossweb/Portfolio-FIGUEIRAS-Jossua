@@ -45,7 +45,7 @@ export default function Home() {
         <Hero/>
         <Nav/>
         <About/>
-        <div className="flex flex-col h-screen w-full px-[20px] w-full ">
+        <div className="flex flex-col w-full px-[20px] w-full ">
            <h2 className="max-w-7xl pl-4 mx-auto text-[45px] mt-10 glitch text-[color:var(--color-alt)]">My Projects</h2>
         <Carousel items={cards} />
         </div>
