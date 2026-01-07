@@ -26,10 +26,10 @@ export default function Home() {
             {project.link && (
               <div className="flex flex-row gap-5">
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-white/90 text-xl hover:bg-black/40 transition-all duration-500 px-2 py-1 bg-transparent rounded">Visit the website</a>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent px-2 py-1 bg-white/70 rounded transition-all duration-500">Visit the website</a>
                 )}
                 {project.github && (
-                  <a href={project.github} target="_blank" className="mt-4 inline-block text-white/90 text-xl hover:bg-black/40 px-2 py-1 bg-transparent rounded transition-all duration-500">View on GitHub</a>
+                  <a href={project.github} target="_blank" className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent px-2 py-1 bg-white/70 rounded transition-all duration-500">Check on GitHub</a>
                 )}
               </div>
             )}
@@ -40,7 +40,7 @@ export default function Home() {
     />
   ));
   return (
-    <div className="w-full min-h-screen flex justify-center items-center overflow-hidden">
+    <div className="w-full min-h-screen overflow-hidden">
       <main className="w-full flex flex-col items-center">
         <Hero/>
         <Nav/>

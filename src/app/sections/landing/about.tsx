@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About(){
     return(
-        <section id="about" className="flex flex-row w-full justify-center items-center w-full mt-[200px] w-full max-w-[2440px] md:mb-10 bg-[color:var(--color-alt)] py-30 gap-40">
+        <section id="about" className="flex flex-row w-full justify-center items-center w-full mt-[200px] w-full md:mb-10 bg-[color:var(--color-alt)] py-30 gap-40 px-[20px]">
 
             <div className="flex flex-col gap-4 md:max-w-[40%] md:max-w-[800px] px-5 md:px-0">
                 <h1 className="glitch text-[42px] text-white/90 ">About me</h1>
