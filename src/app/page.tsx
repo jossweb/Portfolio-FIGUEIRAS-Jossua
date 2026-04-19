@@ -20,19 +20,33 @@ export default function Home() {
             <p className="text-white/70 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-white/90">
                 {project.name}
-              </span>{" "}
+              </span>
               {project.description}
             </p>
-            {project.link && (
-              <div className="flex flex-row gap-5">
-                {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent px-2 py-1 bg-white/70 rounded transition-all duration-500">Visit the website</a>
-                )}
-                {project.github && (
-                  <a href={project.github} target="_blank" className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent px-2 py-1 bg-white/70 rounded transition-all duration-500">Check on GitHub</a>
-                )}
-              </div>
-            )}
+            <div className="flex flex-row gap-5">
+
+              {project.link && (
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent px-2 py-1 bg-white/70 rounded transition-all duration-200"
+                >
+                  Visit the website
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-black/90 text-xl hover:bg-transparent hover:text-white/70 px-2 py-1 bg-white/70 rounded transition-all duration-200"
+                >
+                  Check on GitHub
+                </a>
+              )}
+            </div>
           </div>
         ),
       }}
