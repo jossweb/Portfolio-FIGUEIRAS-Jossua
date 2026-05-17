@@ -1,10 +1,20 @@
 import { ProjectData } from "../types/projects";
 
 export const projects: ProjectData[] = [
-    {
+  {
+    name: "Qwen3-14B-legal",
+    description: ". This project aims to create a chatbot expert in French law. The objective was to build a RAG pipeline. For resources, I downloaded the entire Civil Code from the Légifrance API and created a dataset to serve as the knowledge base for the model. On the other hand, I used Qwen3-14B as a base model and fine-tuned it. The objective was to extend its tokenizer and embedding table with French legal words. You can find everything about this project on Hugging Face",
+    github: null,
+    huggingface: "https://huggingface.co/Dr-joss/Qwen3-14B-legal",
+    link: null,
+    type: "RAG / Finetuning",
+    imgPath: "/img/poster-qwen-legal.png",
+  },
+  {
     name: "Jossnet-bitnet",
     description: "'s goal is reimplement from scratch a bitnet model for apple silicon. Using metal to harness all the power of the gpu. The main objective of this project is to discover programmation on gpu and understand all concepts behind à transformers model.",
     github: "https://github.com/jossweb/jossnet-bitnet",
+    huggingface: null,
     link: null,
     type: "Machine-learning",
     imgPath: "/img/bitnetxmetal.webp",
@@ -13,6 +23,7 @@ export const projects: ProjectData[] = [
     name: "Jossnet",
     description: " is the name of a series of projects focused on network protocols. I first started by experimenting with the Noise Protocol (a framework that allows you to create custom protocols), and then developed a new version in C and Objective-C based on TCP/IP. This work is intended purely for educational purposes and is not meant for production use. (Disclaimer: only the code of the first version is currently available on GitHub).",
     github: "https://github.com/jossweb/Jossnet-Core",
+    huggingface: null,
     link: "https://jossnet.com",
     type: "Network",
     imgPath: "/img/jossnet-poster.png",
@@ -21,6 +32,7 @@ export const projects: ProjectData[] = [
     name: "Silicon map",
     description: " is a Java desktop application developed as a two-person group project during my second year of university, using Maven for dependency management and JavaFX for the UI.",
     github: "https://github.com/jossweb/silicon-map",
+    huggingface: null,
     link: null,
     type: "Desktop App",
     imgPath: "/img/siliconmap-poster.webp",
@@ -29,6 +41,7 @@ export const projects: ProjectData[] = [
     name: "Skillup",
     description: " is a website designed to connect teachers who publish their courses on the platform with users who can access them. Skillup is a group project developed as part of my studies.",
     github: "https://github.com/jossweb/SkillUp",
+    huggingface: null,
     link: "https://skillup.great-site.net",
     type: "Web",
     imgPath: "/img/skillup-poster.webp",
@@ -37,6 +50,7 @@ export const projects: ProjectData[] = [
     name: "Portfolio",
     description: " : find the code and all the information on GitHub.",
     github: "https://github.com/jossweb/Portfolio-FIGUEIRAS-Jossua",
+    huggingface: null,
     link: "https://jossua.dev",
     type: "Web",
     imgPath: "/img/portfolio-poster.webp",
@@ -45,6 +59,7 @@ export const projects: ProjectData[] = [
     name: "Nuit de l’info",
     description: " : In 2024, our team competed in the 'Nuit de l’Info' and won a gold medal for a specific technical challenge. In 2025, we participated again and ranked 5th out of 822 teams in the national main challenge.",
     github: "https://github.com/sws-corp",
+    huggingface: null,
     link: "https://sws.jossua.dev",
     type: "Challenges",
     imgPath: "/img/sws-poster.webp",

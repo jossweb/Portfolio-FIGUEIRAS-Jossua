@@ -8,7 +8,7 @@ export default function About(){
                 <h1 className="glitch text-[42px] text-white/90 ">About me</h1>
                 <p className="text-[20px] mb-10 md:mb-0 text-white/70">Hi, I’m Jossua, a second-year Computer Science student at the University of Tours.
 I first got into computer science through hardware, then I became interested in other areas such as web programming and algorithms.
-Today, I’m particularly passionate about cryptography and artificial intelligence. I don’t practice them in a professional context yet, but rather as a way to learn new things and have fun!</p>
+Today, I’m particularly passionate about artificial intelligence. I don’t practice them in a professional context yet, but rather as a way to learn new things and have fun!</p>
             </div>
                 <Image
                     src="/img/setup-card.png"
